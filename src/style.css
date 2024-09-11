@@ -1,0 +1,29 @@
+html {
+    font-size: 12px; /* 设置根元素的字体大小 */
+
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem; /* 设置全局字体大小 */
+
+}
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 12px; /* 当屏幕宽度小于或等于1200px时，html的字体大小为14px */
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        font-size: 10px; /* 当屏幕宽度小于或等于800px时，html的字体大小为12px */
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 8px; /* 当屏幕宽度小于或等于600px时，html的字体大小为10px */
+    }
+}
