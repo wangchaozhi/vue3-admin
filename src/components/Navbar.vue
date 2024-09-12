@@ -144,8 +144,22 @@ function logout() {
 }
 
 /* 鼠标悬停时触发摇晃动画 */
-.bell-icon:hover {
+.badge:hover {
   animation: shake 0.5s ease-in-out;
   transform-origin: center;
+}
+.notification-icon{
+  padding-bottom: 1.2rem;
+}
+:deep(.n-badge .n-badge-sup) {
+  --n-font-size:1rem;
+  padding: 0 3px;
+  transform: translateX(-20%);
+}
+
+:deep(svg) {
+  width: 2rem; /* 图标的宽度 */
+  height: 2rem; /* 图标的高度 */
+
 }
 </style>

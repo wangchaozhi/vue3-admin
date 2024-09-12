@@ -19,7 +19,15 @@ const selectedKey = ref(null);
 const menuOptions = [
   { label: '主页', key: 'home', to: '/main/home', icon: () => h(HomeOutline) },
   { label: '关于', key: 'about', to: '/main/about', icon: () => h(InformationCircleOutline) },
-  { label: '列表', key: 'list', to: '/main/list', icon: () => h(ListOutline) },
+  {
+    label: '列表',
+    key: 'list',
+    icon: () => h(ListOutline),
+    children: [ // 添加子菜单项
+      { label: '子菜单 1', key: 'sub-list-1', to: '/main/list/sub1' },
+      { label: '子菜单 2', key: 'sub-list-2', to: '/main/list/sub2' }
+    ]
+  },
   { label: '表单', key: 'list2', to: '/main/list2', icon: () => h(DocumentOutline) },
   { label: 'websocket', key: 'websocket', to: '/main/websocket', icon: () => h(CloudOutline) },
   { label: 'excel', key: 'excel', to: '/main/excel', icon: () => h(DocumentOutline) },
@@ -67,6 +75,9 @@ setSelectedMenuKey(route.path);
   display: flex;
   align-items: center;
   padding-left: 2rem!important;
+}
+:deep( .n-submenu-children ) {
+  padding-left: 2rem!important; /* 增加子菜单的左侧内边距 */
 }
 
 :deep(svg) {
