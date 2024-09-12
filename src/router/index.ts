@@ -8,6 +8,9 @@ import Home from "../components/Home.vue";
 import Login from "../components/Login.vue";
 import MainLayout from '@/components/MainLayout.vue';
 import ExamSearchPage from "@/components/ExamSearchPage.vue";
+import EmptyRouterView from'@/components/EmptyRouterView.vue'
+import Profile from'@/components/navbar/Profile.vue'
+import ChangePassWord from'@/components/navbar/ChangePassWord.vue'
 import TableList from "@/components/TableList.vue";
 import TableListT from "@/components/TableListT.vue";
 import WebSocket from "@/components/WebSocket.vue";
@@ -21,7 +24,16 @@ const routes: RouteRecordRaw[] = [
         children: [
             { path: 'home', component: Home },  // 子路径 'home'
             { path: 'about', component: About },
-            { path: 'list', component: TableList },
+            { path: 'profile', component: Profile },
+            { path: 'change-password', component: ChangePassWord },
+            {
+                path: 'list',
+                component:EmptyRouterView, // 或者使用重定向
+                children: [
+                    { path: 'sub1', component: TableList }, // 子菜单项 'sub-list-1'
+                    { path: 'sub2', component: Login } // 子菜单项 'sub-list-2'
+                ]
+            },
             { path: 'list2', component: TableListT },
             { path: 'websocket', component: WebSocket },
             { path: 'excel', component: Excel },

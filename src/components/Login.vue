@@ -34,7 +34,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import store from "@/store/index.js"; // 确保路径正确
-import { useMessage } from 'naive-ui'; // 引入 Naive UI 的消息提示功能
+// import { useMessage } from 'naive-ui'; // 引入 Naive UI 的消息提示功能
 
 const credentials = ref({ username: '', password: '' });
 const errorMessage = ref('');

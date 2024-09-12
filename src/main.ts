@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import naive from 'naive-ui';
+// import naive from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css'
 // 等宽字体
@@ -13,7 +13,7 @@ import './style.css' // 导入全局样式文件
 const app = createApp(App)
 app.use(router);
 app.use(store);
-app.use(naive)
+// app.use(naive)
 app.mount('#app')
 
 

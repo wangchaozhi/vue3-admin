@@ -73,10 +73,10 @@ const dropdownOptions = ref([
 function handleDropdownSelect(key) {
   if (key === 'profile') {
     // 跳转到个人中心页面
-    router.push('/profile');
+    router.push('/main/profile');
   } else if (key === 'change-password') {
     // 跳转到修改密码页面
-    router.push('/change-password');
+    router.push('/main/change-password');
   } else if (key === 'logout') {
     // 执行注销操作
     logout();
