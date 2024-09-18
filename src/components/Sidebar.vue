@@ -34,7 +34,7 @@ const menuOptions = [
   { label: '搜索', key: 'ExamSearchPage', to: '/main/examSearchPage', icon: () => h(SearchOutline) },
   // { label: '访问 aria2', key: 'aria2', to: '/aria2.html', icon: () => h(DocumentOutline), external: true },
   { label: 'A 页面', key: 'a-html', to: '/main/a-html', icon: () => h(DocumentOutline) },  // A 页
-  { label: '端口 6971 页面', key: 'port-6971', to: '/main/port-6971', icon: () => h(DocumentOutline) },
+  { label: 'FileBrowser', key: 'fileBrowser', to: '/main/fileBrowser', icon: () => h(DocumentOutline) },
   { label: 'x-ui', key: 'x-ui', to: '/main/x-ui', icon: () => h(DocumentOutline) },
 ];
 

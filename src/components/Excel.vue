@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="exportToExcel">导出到Excel</button>
+    <n-button @click="exportToExcel">导出到Excel</n-button>
   </div>
 </template>
 
