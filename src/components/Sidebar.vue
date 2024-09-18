@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <!-- 侧边栏的内容放置在这里 -->
-    <n-menu :options="menuOptions" v-model:value="selectedKey" @update:value="handleMenuSelect" />
+    <n-menu :options="menuOptions" :theme="theme"  v-model:value="selectedKey" @update:value="handleMenuSelect" />
   </div>
 </template>
 
@@ -32,6 +32,10 @@ const menuOptions = [
   { label: 'websocket', key: 'websocket', to: '/main/websocket', icon: () => h(CloudOutline) },
   { label: 'excel', key: 'excel', to: '/main/excel', icon: () => h(DocumentOutline) },
   { label: '搜索', key: 'ExamSearchPage', to: '/main/examSearchPage', icon: () => h(SearchOutline) },
+  // { label: '访问 aria2', key: 'aria2', to: '/aria2.html', icon: () => h(DocumentOutline), external: true },
+  { label: 'A 页面', key: 'a-html', to: '/main/a-html', icon: () => h(DocumentOutline) },  // A 页
+  { label: '端口 6971 页面', key: 'port-6971', to: '/main/port-6971', icon: () => h(DocumentOutline) },
+  { label: 'x-ui', key: 'x-ui', to: '/main/x-ui', icon: () => h(DocumentOutline) },
 ];
 
 // 根据路由路径设置选中的菜单项
@@ -52,12 +56,24 @@ watch(
 );
 
 // 处理菜单选择
+// function handleMenuSelect(key, item) {
+//   if (item.to) {
+//     router.push(item.to);
+//   }
+//   selectedKey.value = key;
+// }
+
 function handleMenuSelect(key, item) {
-  if (item.to) {
+  if (item.external) {
+    // 如果是外部链接，使用 window.location.href 进行跳转
+    window.location.href = item.to;
+  } else {
+    // 如果是内部 Vue 路由，使用 router.push
     router.push(item.to);
   }
   selectedKey.value = key;
 }
+
 
 // 页面加载时初始化菜单状态
 setSelectedMenuKey(route.path);

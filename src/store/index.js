@@ -5,6 +5,7 @@ export default createStore({
     state: {
         sidebarVisible: getSidebarVisible(),
         isAuthenticated: JSON.parse(localStorage.getItem('isAuthenticated')) || false, // 从 localStorage 恢复登录状态
+        isDarkTheme: JSON.parse(localStorage.getItem('isDarkTheme')) || false,
     },
     mutations: {
         toggleSidebar(state) {
@@ -18,7 +19,11 @@ export default createStore({
         setAuthentication(state, status) {
             state.isAuthenticated = status; // 设置登录状态
             localStorage.setItem('isAuthenticated', JSON.stringify(status)); // 持久化登录状态
-        }
+        },
+        toggleTheme(state) {
+            state.isDarkTheme = !state.isDarkTheme;
+            localStorage.setItem('isDarkTheme', JSON.stringify(state.isDarkTheme));
+        },
     },
     actions: {
         toggleSidebar({ commit }) {
@@ -34,6 +39,9 @@ export default createStore({
         logout({ commit }) {
             commit('setAuthentication', false); // 注销时设置为未认证
             localStorage.removeItem('isAuthenticated'); // 注销时移除登录状态
-        }
+        },
+        toggleTheme({ commit }) {
+            commit('toggleTheme');
+        },
     }
 });

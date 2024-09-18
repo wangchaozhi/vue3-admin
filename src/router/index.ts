@@ -15,6 +15,9 @@ import TableList from "@/components/TableList.vue";
 import TableListT from "@/components/TableListT.vue";
 import WebSocket from "@/components/WebSocket.vue";
 import Excel from "@/components/Excel.vue";
+import AHtmlIframe from "@/components/iframePages/AHtmlIframe.vue";
+import Port6971Page from "@/components/iframePages/Filebrowser.vue";
+import XUIPage from "@/components/iframePages/XUIPage.vue";
 
 const routes: RouteRecordRaw[] = [
     { path: '/', component: Login },  // 登录页面作为首页
@@ -38,6 +41,9 @@ const routes: RouteRecordRaw[] = [
             { path: 'websocket', component: WebSocket },
             { path: 'excel', component: Excel },
             { path: 'examSearchPage', component: ExamSearchPage },
+            { path: 'a-html', component: AHtmlIframe, meta: { requiresAuth: true } },  // 通过 iframe 嵌入 a.html
+            { path: 'port-6971', component: Port6971Page, meta: { requiresAuth: true } }, // 端口 6971 页面
+            { path: 'x-ui', component: XUIPage, meta: { requiresAuth: true } },
         ],
         meta: { requiresAuth: true }  // 需要登录的页面
     }
