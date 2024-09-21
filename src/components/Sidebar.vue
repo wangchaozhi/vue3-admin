@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <!-- 侧边栏的内容放置在这里 -->
-    <n-menu :options="menuOptions" :theme="theme"  v-model:value="selectedKey" @update:value="handleMenuSelect" />
+    <n-menu :options="menuOptions" v-model:value="selectedKey" @update:value="handleMenuSelect" />
   </div>
 </template>
 
@@ -33,7 +33,7 @@ const menuOptions = [
   { label: 'excel', key: 'excel', to: '/main/excel', icon: () => h(DocumentOutline) },
   { label: '搜索', key: 'ExamSearchPage', to: '/main/examSearchPage', icon: () => h(SearchOutline) },
   // { label: '访问 aria2', key: 'aria2', to: '/aria2.html', icon: () => h(DocumentOutline), external: true },
-  { label: 'A 页面', key: 'a-html', to: '/main/a-html', icon: () => h(DocumentOutline) },  // A 页
+  { label: 'Aria2页面', key: 'a-html', to: '/main/a-html', icon: () => h(DocumentOutline) },  // A 页
   { label: 'FileBrowser', key: 'fileBrowser', to: '/main/fileBrowser', icon: () => h(DocumentOutline) },
   { label: 'x-ui', key: 'x-ui', to: '/main/x-ui', icon: () => h(DocumentOutline) },
 ];

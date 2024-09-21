@@ -24,7 +24,7 @@
 import { ref } from 'vue';
 import { useMessage } from 'naive-ui';
 import { createMessage } from '@/utils/message'; // 导入封装好的消息方法
-import { searchTest } from '@/api'; // 假设你在 api/index.js 中封装了接口请求
+import {fetchUsers, searchTest} from '@/api'; // 假设你在 api/index.js 中封装了接口请求
 // 使用 Naive UI 的消息系统
 const message = createMessage(useMessage()); // 创建全局消息实例
 
@@ -66,7 +66,7 @@ async function handleSearch() {
     }
     const data = { query: searchQuery.value, page: pagination.value.page, pageSize: pagination.value.pageSize };
 
-    const response = await searchTest(data); // 发送 POST 请求
+    const response = await fetchUsers(); // 发送 POST 请求
 
     if (response.code === 200) {
       tableData.value = response.data; // 解析数据到表格

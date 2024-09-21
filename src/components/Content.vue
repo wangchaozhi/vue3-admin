@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="watermark">
-      <div class="watermark-text">Confidential</div>
+      <div class="watermark-text" style=" display: none">Confidential</div>
     </div>
     <n-message-provider>
       <!-- 这里是你的应用程序的内容 -->

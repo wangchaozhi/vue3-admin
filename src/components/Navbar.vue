@@ -74,6 +74,8 @@ import {ref} from 'vue';
 const router = useRouter();
 const store = useStore();
 
+const message = useMessage(); // 使用 Naive UI 的消息提示
+
 
 // 控制通知抽屉显示的状态
 const isNotificationDrawerVisible = ref(false);
@@ -105,7 +107,12 @@ function handleDropdownSelect(key) {
 }
 
 function logout() {
+  // 调用 Vuex 中的注销逻辑，清除用户状态和 token
   store.dispatch('logout');
+  // 清除 localStorage 中的 token
+  localStorage.removeItem('authToken');
+  // 显示注销成功的消息
+  message.success('您已成功注销');
   router.push('/');  // 退出后重定向到登录页面
 }
 
@@ -117,6 +124,7 @@ const isDarkTheme = computed(() => store.state.isDarkTheme);
 function toggleTheme() {
   store.dispatch('toggleTheme'); // 调用 Vuex 中的切换主题 action
 }
+
 
 // 你可以根据需要在这里添加逻辑
 </script>

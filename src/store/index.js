@@ -4,8 +4,10 @@ import { getSidebarVisible, setSidebarVisible } from '@/utils/localStorageHelper
 export default createStore({
     state: {
         sidebarVisible: getSidebarVisible(),
-        isAuthenticated: JSON.parse(localStorage.getItem('isAuthenticated')) || false, // 从 localStorage 恢复登录状态
+        user: null,
+        isAuthenticated: !!localStorage.getItem('authToken'), // 判断是否已登录
         isDarkTheme: JSON.parse(localStorage.getItem('isDarkTheme')) || false,
+
     },
     mutations: {
         toggleSidebar(state) {
@@ -16,9 +18,14 @@ export default createStore({
             state.sidebarVisible = isVisible;
             setSidebarVisible(state.sidebarVisible);
         },
-        setAuthentication(state, status) {
-            state.isAuthenticated = status; // 设置登录状态
-            localStorage.setItem('isAuthenticated', JSON.stringify(status)); // 持久化登录状态
+        setUser(state, user) {
+            state.user = user;
+            state.isAuthenticated = true;
+        },
+        logout(state) {
+            state.user = null;
+            state.isAuthenticated = false;
+            localStorage.removeItem('authToken'); // 删除 token
         },
         toggleTheme(state) {
             state.isDarkTheme = !state.isDarkTheme;
@@ -33,12 +40,11 @@ export default createStore({
             const savedState = getSidebarVisible();
             commit('setSidebarVisible', savedState);
         },
-        login({ commit }) {
-            commit('setAuthentication', true); // 登录时设置为已认证
+        login({ commit }, { user }) {
+            commit('setUser', user);
         },
         logout({ commit }) {
-            commit('setAuthentication', false); // 注销时设置为未认证
-            localStorage.removeItem('isAuthenticated'); // 注销时移除登录状态
+            commit('logout');
         },
         toggleTheme({ commit }) {
             commit('toggleTheme');

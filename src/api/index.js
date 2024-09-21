@@ -60,10 +60,11 @@ export const put = (url, data) => apiClient.put(url, data);
 export const del = (url) => apiClient.delete(url);
 
 // 示例 API 调用
-export const fetchUsers = () => get('/users'); // 示例：获取用户列表
+export const fetchUsers = () => get('/users/users'); // 示例：获取用户列表
 export const createUser = (userData) => post('/users', userData); // 示例：创建用户
 // 添加到 api/index.js 文件
 // 封装搜索接口的 POST 请求
-export const searchTest = (data) => post('/officeAutomation/test/search', data);
+// export const searchTest = (data) => post('/officeAutomation/test/search', data);
+export const searchTest = (data) => get('/officeAutomation/test/search', data);
 
 
