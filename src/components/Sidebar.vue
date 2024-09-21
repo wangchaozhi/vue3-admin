@@ -8,9 +8,11 @@
 <script setup>
 import { ref, watch, h } from 'vue'; // 导入 h 函数
 import { useRouter, useRoute } from 'vue-router';
+import { useTabs } from '@/composables/useTabs';
 import { NMenu } from 'naive-ui';
 import { HomeOutline, InformationCircleOutline, ListOutline, DocumentOutline, CloudOutline, SearchOutline } from '@vicons/ionicons5'; // 导入图标
 
+const { addTab } = useTabs();
 const router = useRouter();
 const route = useRoute();
 const selectedKey = ref(null);
@@ -72,6 +74,7 @@ function handleMenuSelect(key, item) {
     router.push(item.to);
   }
   selectedKey.value = key;
+  addTab({ label: item.label, key: item.key, to: item.to });
 }
 
 

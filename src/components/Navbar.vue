@@ -112,7 +112,7 @@ function logout() {
   // 清除 localStorage 中的 token
   localStorage.removeItem('authToken');
   // 显示注销成功的消息
-  message.success('您已成功注销');
+  message.success('注销成功');
   router.push('/');  // 退出后重定向到登录页面
 }
 

@@ -8,8 +8,8 @@
       <!-- 侧边栏，通过 Vuex 状态控制显示 -->
       <Sidebar v-if="sidebarVisible" />
 
-      <!-- 右侧内容区域 -->
-      <Content />
+        <!-- 右侧内容区域 -->
+        <Content />
     </div>
   </div>
 </template>
@@ -21,6 +21,7 @@ import { useWatermark } from '@/utils/useWatermark'; // 假设水印逻辑在 us
 import Navbar from './Navbar.vue';
 import Sidebar from './Sidebar.vue';
 import Content from '@/components/Content.vue';
+import Tabs from "@/components/Tabs.vue";
 
 // 读取环境变量
 const enableWatermark = import.meta.env.VITE_ENABLE_WATERMARK === 'true'; // 确保布尔值
@@ -68,4 +69,5 @@ onBeforeUnmount(() => {
   flex: 1; /* 占据剩余的高度 */
   position: relative; /* 保证水印的定位相对该容器 */
 }
+
 </style>

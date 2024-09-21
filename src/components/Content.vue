@@ -3,8 +3,10 @@
     <div class="watermark">
       <div class="watermark-text" style=" display: none">Confidential</div>
     </div>
+    <!-- 引入 Tabs 组件 -->
+    <Tabs />
     <n-message-provider>
-      <!-- 这里是你的应用程序的内容 -->
+<!--      &lt;!&ndash; 这里是你的应用程序的内容 &ndash;&gt;-->
       <router-view />
     </n-message-provider>
   </div>
@@ -44,3 +46,6 @@
   white-space: nowrap;
 }
 </style>
+<script setup lang="ts">
+import Tabs from "@/components/Tabs.vue";
+</script>

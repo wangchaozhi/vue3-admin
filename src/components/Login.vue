@@ -1,4 +1,6 @@
 <template>
+  <n-config-provider :theme="null">
+
   <div class="login-page">
     <div class="login-container">
       <h2 class="login-title">vue3管理系统</h2>
@@ -29,6 +31,7 @@
       <!--      <p v-if="errorMessage" class="error">{{ errorMessage }}</p>-->
     </div>
   </div>
+  </n-config-provider>
 </template>
 
 <script setup>
