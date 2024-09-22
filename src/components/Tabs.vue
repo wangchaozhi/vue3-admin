@@ -126,9 +126,7 @@ onBeforeUnmount(() => {
 .tabs-container {
   width: 100%;
 }
-.n-tab-pane {
-  display: none;
-}
+
 
 
 :deep(.n-tabs-tab) {

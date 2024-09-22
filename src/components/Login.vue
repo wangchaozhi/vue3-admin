@@ -1,6 +1,5 @@
 <template>
   <n-config-provider :theme="null">
-
   <div class="login-page">
     <div class="login-container">
       <h2 class="login-title">vue3管理系统</h2>
@@ -121,6 +120,10 @@ async function handleLogin() {
 function clearErrorMessage() {
   errorMessage.value = ''; // 清除错误消息
 }
+const loadingBar = useLoadingBar();
+console.log(loadingBar)
+loadingBar.start
+
 </script>
 
 <style scoped>

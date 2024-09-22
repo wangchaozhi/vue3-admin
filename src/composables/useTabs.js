@@ -2,7 +2,7 @@ import { ref } from 'vue';
 
 const activeTab = ref('home');
 const tabs = ref([
-    { label: '主页', key: 'home', to: '/main/home' },
+    // { label: '主页', key: 'home', to: '/main/home' },
 ]);
 
 export function useTabs() {

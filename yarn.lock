@@ -1807,9 +1807,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"naive-ui@npm:^2.38.1":
-  version: 2.38.1
-  resolution: "naive-ui@npm:2.38.1"
+"naive-ui@npm:^2.39.0":
+  version: 2.39.0
+  resolution: "naive-ui@npm:2.39.0"
   dependencies:
     "@css-render/plugin-bem": "npm:^0.15.12"
     "@css-render/vue3-ssr": "npm:^0.15.12"
@@ -1832,7 +1832,7 @@ __metadata:
     vueuc: "npm:^0.4.58"
   peerDependencies:
     vue: ^3.0.0
-  checksum: 10c0/e0ec0df98ae2b7afdd7caa335eefa1d5d4e65c40397f17525200d88ce1b0022386efcd5f198b05bc54c7a91317a7382fdd27b617dc78ed91c89c5cc18948d5bd
+  checksum: 10c0/fa3301166bd0ae8f43567afbead5d9139d53205868b5d5eebfc5c85ccb52c79373d48b36f1e9c2ab626ebf98d1aac1c52f834a1f5879de0dd9e2d9e8748241f5
   languageName: node
   linkType: hard
 
@@ -2545,7 +2545,7 @@ __metadata:
     "@vicons/ionicons5": "npm:^0.12.0"
     "@vitejs/plugin-vue": "npm:^4.5.2"
     axios: "npm:^1.7.7"
-    naive-ui: "npm:^2.38.1"
+    naive-ui: "npm:^2.39.0"
     rollup-plugin-visualizer: "npm:^5.12.0"
     sass: "npm:^1.72.0"
     typescript: "npm:^5.2.2"

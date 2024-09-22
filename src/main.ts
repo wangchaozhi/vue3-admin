@@ -11,9 +11,9 @@ import './style.css' // 导入全局样式文件
 
 
 const app = createApp(App)
-app.use(router);
-app.use(store);
 // app.use(naive)
+app.use(store);
+app.use(router);
 app.mount('#app')
 
 

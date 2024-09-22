@@ -2,7 +2,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from "@/store";
 import {RouteRecordRaw} from 'vue-router';
-
 import About from "../components/About.vue";
 import Home from "../components/Home.vue";
 import Login from "../components/Login.vue";
@@ -54,10 +53,10 @@ const router = createRouter({
     routes
 });
 
+
 // 全局导航守卫
 router.beforeEach((to, _, next) => {
-    const isAuthenticated = store.state.isAuthenticated;  // 检查登录状态
-
+    const isAuthenticated = store.state.isAuthenticated; // 检查登录状态
     // 检查路由是否需要认证
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (!isAuthenticated) {
@@ -70,6 +69,7 @@ router.beforeEach((to, _, next) => {
         next(); // 路由不需要认证，直接访问
     }
 });
+
 
 export default router;
 
