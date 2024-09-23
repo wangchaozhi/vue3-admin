@@ -1,7 +1,7 @@
 <template>
   <n-loading-bar-provider  :loading-bar-style="{  }">
     <n-dialog-provider>
-    <n-config-provider :theme="theme">
+    <n-config-provider :theme="theme" :locale="zhCN" :date-locale="dateZhCN">
       <n-global-style/>
       <n-message-provider>
         <router-view/> <!-- 渲染路由页面 -->
@@ -16,6 +16,7 @@
 import {lightTheme, darkTheme} from 'naive-ui';
 import {computed, onMounted} from 'vue';
 import {useStore} from 'vuex';
+import { zhCN, dateZhCN } from 'naive-ui'
 
 const store = useStore();
 

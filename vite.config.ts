@@ -13,7 +13,8 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    vendor: ['vue', 'vue-router', 'vuex'] // 将常用的库单独打包成 vendor.js
+                    vendor: ['vue', 'vue-router', 'vuex'], // 将常用的库单独打包成 vendor.js
+                     echarts: ['echarts', 'vue-echarts'] // 将 echarts 和 vue-echarts 单独打包到 echarts.js
                 }
             },
         }
@@ -48,5 +49,7 @@ export default defineConfig({
             "@": path.resolve(__dirname, "src"),  // 使用 path.resolve 更常见
             "#": path.resolve(__dirname, "types")
         }
-    }
+    },
+
+
 })

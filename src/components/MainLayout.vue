@@ -24,6 +24,7 @@ import Navbar from './Navbar.vue';
 import Sidebar from './Sidebar.vue';
 import Content from '@/components/Content.vue';
 import Tabs from "@/components/Tabs.vue";
+import { loading } from '@/api'; // 引入 loading 状态
 
 import { useRouter } from 'vue-router';
 
@@ -34,7 +35,7 @@ const enableWatermark = import.meta.env.VITE_ENABLE_WATERMARK === 'true'; // 确
 
 const store = useStore();
 const watermarkContainer = ref(null); // 引用水印容器
-const loading = ref(false);
+// const loading = ref(false);
 
 // 计算属性 sidebarVisible 依赖于 Vuex 状态
 const sidebarVisible = computed(() => store.state.sidebarVisible);

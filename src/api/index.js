@@ -5,7 +5,8 @@ import axios from 'axios';
 // const baseURL = process.env.NODE_ENV === 'production'
 //     ? 'https://api.production.com' // 生产环境地址（打包后）
 //     : 'http://localhost:8090'; // 开发环境地址（开发时
-
+// 定义全局的 loading 状态
+export const loading = ref(false);
 // 从环境变量中获取 API 的 baseURL
 const baseURL = import.meta.env.VITE_APP_API_BASE_URL;
 
@@ -22,6 +23,8 @@ const apiClient = axios.create({
 // 请求拦截器
 apiClient.interceptors.request.use(
     (config) => {
+        // 在发送请求之前将 loading 设置为 true
+        loading.value = true;
         // 在发送请求之前做一些操作，例如添加认证 token
         const token = localStorage.getItem('authToken'); // 获取存储的 token
         if (token) {
@@ -30,18 +33,26 @@ apiClient.interceptors.request.use(
         return config;
     },
     (error) => {
+        // 请求错误时，将 loading 设置为 false
+        loading.value = false;
         // 处理请求错误
         return Promise.reject(error);
     }
 );
 
+
+
 // 响应拦截器
 apiClient.interceptors.response.use(
     (response) => {
+        // 请求成功后，将 loading 设置为 false
+        loading.value = false;
         // 可以根据后端的返回结构处理响应数据
         return response.data; // 只返回响应的 data
     },
     (error) => {
+        // 请求失败时，将 loading 设置为 false
+        loading.value = false;
         // 统一处理响应错误
         if (error.response) {
             // 服务器返回的错误
