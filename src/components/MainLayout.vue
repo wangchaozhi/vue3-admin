@@ -78,11 +78,11 @@ const loadingBar = useLoadingBar();
     loadingBar.finish(); // 结束加载条
   });
 
-onMounted(() => {
-let elementById = document.getElementById('main-6');
-console.log(elementById);
-
-});
+// onMounted(() => {
+// let elementById = document.getElementById('main-6');
+// console.log(elementById);
+//
+// });
 </script>
 
 <style scoped>

@@ -11,7 +11,7 @@ const baseURL = import.meta.env.VITE_APP_API_BASE_URL;
 
 // 创建 axios 实例时确保 baseURL 正确
 const apiClient = axios.create({
-    baseURL: baseURL, // 后端的基础URL
+    baseURL: baseURL+"/api", // 后端的基础URL
     timeout: 10000, // 请求超时时间
     headers: {
         'Content-Type': 'application/json', // 设置默认的请求头
@@ -60,7 +60,7 @@ export const put = (url, data) => apiClient.put(url, data);
 export const del = (url) => apiClient.delete(url);
 
 // 示例 API 调用
-export const fetchUsers = () => get('/users/users'); // 示例：获取用户列表
+export const fetchUsers = () => get('/users'); // 示例：获取用户列表
 export const createUser = (userData) => post('/users', userData); // 示例：创建用户
 // 添加到 api/index.js 文件
 // 封装搜索接口的 POST 请求

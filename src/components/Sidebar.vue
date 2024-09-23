@@ -38,6 +38,7 @@ const menuOptions = [
   { label: 'Aria2页面', key: 'a-html', to: '/main/a-html', icon: () => h(DocumentOutline) },  // A 页
   { label: 'FileBrowser', key: 'fileBrowser', to: '/main/fileBrowser', icon: () => h(DocumentOutline) },
   { label: 'x-ui', key: 'x-ui', to: '/main/x-ui', icon: () => h(DocumentOutline) },
+  { label: 'user', key: 'user', to: '/main/user', icon: () => h(DocumentOutline) },
 ];
 
 // 根据路由路径设置选中的菜单项

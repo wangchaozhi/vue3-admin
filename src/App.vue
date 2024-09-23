@@ -1,11 +1,13 @@
 <template>
   <n-loading-bar-provider  :loading-bar-style="{  }">
+    <n-dialog-provider>
     <n-config-provider :theme="theme">
       <n-global-style/>
       <n-message-provider>
         <router-view/> <!-- 渲染路由页面 -->
       </n-message-provider>
     </n-config-provider>
+    </n-dialog-provider>
   </n-loading-bar-provider>
 </template>
 
@@ -22,13 +24,13 @@ const theme = computed(() => (store.state.isDarkTheme ? darkTheme : lightTheme))
 
 
 
-// 融合 DOM 操作，确保子组件和父组件都加载完后获取 DOM 元素
-onMounted(async () => {
-  await nextTick(); // 等待整个 DOM 结构完全渲染
-  const elementById = document.getElementById('main-6');
-  console.log('Element by ID after nextTick:', elementById);
-  console.log('Ref to watermarkContainer:', watermarkContainer.value);  // 获取 ref 绑定的 DOM 元素
-});
+// // 融合 DOM 操作，确保子组件和父组件都加载完后获取 DOM 元素
+// onMounted(async () => {
+//   await nextTick(); // 等待整个 DOM 结构完全渲染
+//   const elementById = document.getElementById('main-6');
+//   console.log('Element by ID after nextTick:', elementById);
+//   console.log('Ref to watermarkContainer:', watermarkContainer.value);  // 获取 ref 绑定的 DOM 元素
+// });
 
 </script>
 
