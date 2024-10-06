@@ -6,8 +6,8 @@
       </ul>
     </div>
     <div class="send-message">
-      <input v-model="newMessage" placeholder="Type a message" />
-      <button @click="sendMessage">Send</button>
+      <n-input v-model="newMessage" placeholder="Type a message" />
+      <n-button @click="sendMessage">Send</n-button>
     </div>
   </div>
 </template>

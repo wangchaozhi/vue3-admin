@@ -6,7 +6,7 @@ import About from "../components/About.vue";
 import Home from "../components/Home.vue";
 import Login from "../components/Login.vue";
 import MainLayout from '@/components/MainLayout.vue';
-import ExamSearchPage from "@/components/ExamSearchPage.vue";
+// import ExamSearchPage from "@/components/ExamSearchPage.vue";
 import EmptyRouterView from'@/components/EmptyRouterView.vue'
 import Profile from'@/components/navbar/Profile.vue'
 import ChangePassWord from'@/components/navbar/ChangePassWord.vue'
@@ -18,6 +18,9 @@ import AHtmlIframe from "@/components/iframePages/AHtmlIframe.vue";
 import Port6971Page from "@/components/iframePages/Filebrowser.vue";
 import XUIPage from "@/components/iframePages/XUIPage.vue";
 import User from "@/components/User.vue";
+import Excel2 from "@/components/Excel2.vue";
+import Upload from "@/components/Upload.vue";
+import ExamSearchPage2 from "@/components/ExamSearchPage2.vue";
 
 const routes: RouteRecordRaw[] = [
     { path: '/', component: Login },  // 登录页面作为首页
@@ -40,7 +43,9 @@ const routes: RouteRecordRaw[] = [
             { path: 'list2', component: TableListT },
             { path: 'websocket', component: WebSocket },
             { path: 'excel', component: Excel },
-            { path: 'examSearchPage', component: ExamSearchPage },
+            { path: 'excel2', component: Excel2 },
+            { path: 'upload', component: Upload },
+            { path: 'examSearchPage', component: ExamSearchPage2 },
             { path: 'a-html', component: AHtmlIframe, meta: { requiresAuth: true } },  // 通过 iframe 嵌入 a.html
             { path: 'fileBrowser', component: Port6971Page, meta: { requiresAuth: true } }, // 端口 6971 页面
             { path: 'x-ui', component: XUIPage, meta: { requiresAuth: true } },

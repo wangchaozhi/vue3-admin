@@ -14,7 +14,13 @@ export default defineConfig({
             output: {
                 manualChunks: {
                     vendor: ['vue', 'vue-router', 'vuex'], // 将常用的库单独打包成 vendor.js
-                     echarts: ['echarts', 'vue-echarts'] // 将 echarts 和 vue-echarts 单独打包到 echarts.js
+                     echarts: ['echarts', 'vue-echarts'], // 将 echarts 和 vue-echarts 单独打包到 echarts.js
+                     exceljs: ['exceljs'],                  // 将 exceljs 单独打包
+                     xlsx: ['xlsx'],                        // 将 xlsx 单独打包
+                     naiveui: ['naive-ui'],                  // 将 Naive UI 单独打包
+                     axios: ['axios'],                            // axios 单独打包
+                     fileSaver: ['file-saver'],                   // file-saver 单独打包
+                     icons: ['@vicons/ionicons5'],                // 图标库单独打包
                 }
             },
         }
